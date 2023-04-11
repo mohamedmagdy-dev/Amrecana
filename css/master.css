@@ -78,9 +78,15 @@ a {
 
 /* Start Header */
 header {
+  position: fixed;
+  width: 100%;
   padding-top: 10px;
   padding-bottom: 10px;
-  box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.15), 0px 5px 17px -2px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.15),
+    0px 5px 17px -2px rgba(0, 0, 0, 0.15);
+  background-color: white;
+  z-index: 999;
+  top: 0;
 }
 
 header .container {
@@ -139,13 +145,14 @@ header .container .links_small ul li.drop_down ul {
   height: 0px;
   gap: 20px;
   transition: height 0.5s, margin-top 0.5s;
+  background-color: white;
 }
 
 header .container .links_small ul li.drop_down ul.active {
-  margin-top: 50px;
-  border: 3px solid var(--main-blue);
-  height: 365px;
   padding: 5px;
+  border: 3px solid var(--main-blue);
+  margin-top: 50px;
+  height: 365px;
 }
 
 header .container .links_small ul li.drop_down ul li:not(:last-of-type) {
@@ -231,6 +238,7 @@ header .container .links ul li ul {
   opacity: 0;
   visibility: hidden;
   transition: visibility 0.3s, opacity 0.3s;
+  background-color: white;
 }
 
 header .container .links ul li:hover ul {
@@ -332,6 +340,12 @@ header .container .langs i {
   }
 }
 
+@media (min-width: 430px) {
+  header .container .links_small ul li.drop_down ul.active {
+    height: 280px;
+  }
+}
+
 @media (max-width: 410px) {
   header .container .langs a:last-of-type {
     margin-left: 10px;
@@ -339,3 +353,233 @@ header .container .langs i {
   }
 }
 /* End Header */
+
+/* Start Slider */
+
+/* .slider {
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 86px;
+}
+
+.slider .content {
+  height: 100%;
+  width: 35%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.slider .content div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  background-color: #e02826;
+  text-align: center;
+}
+
+.slider .visual {
+  height: 100%;
+  position: absolute;
+  left: 35%;
+  top: 0;
+  width: 65%;
+}
+
+.slider .visual video {
+  width: 100%;
+  height: 500px;
+} */
+
+/* Slideshow container */
+.slideshow-container {
+  width: 100%;
+  position: relative;
+  margin: auto;
+  margin-top: 86px;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+  height: 500px;
+}
+
+.mySlides video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.mySlides .text {
+  color: var(--main-blue);
+  font-size: 50px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 40%;
+  width: 100%;
+  text-shadow: -2px 1px 0 #03A9F4;
+  text-align: center;
+}
+
+.mySlides .dec {
+  position: absolute;
+  bottom: 30%;
+  width: 100%;
+  text-align: center;
+  color: #f2f2f2;
+  font-size: 18px;
+  padding: 8px 12px;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1199px) {
+  .slideshow-container {
+    margin-top: 68px;
+  }
+}
+
+@media (max-width: 991px) {
+  .mySlides .dec {
+    bottom: 25%;
+  }
+}
+/* End Slider */
+
+/* Start About */
+.about {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.about .container h2 {
+  position: relative;
+  text-align: center;
+  font-size: 50px;
+  border-bottom: 5px solid var(--main-red);
+  width: fit-content;
+  padding: 10px;
+  margin-inline: auto;
+  margin-bottom: 50px;
+  white-space: nowrap;
+}
+
+.about .container h2::before,
+.about .container h2::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: var(--main-blue);
+  border-radius: 50%;
+  bottom: -10px;
+}
+
+.about .container h2::before {
+  left: 0px;
+}
+
+.about .container h2::after {
+  right: 0px;
+}
+
+.about .container h3 {
+  font-size: 25px;
+  margin-bottom: 20px;
+  color: var(--main-light-black);
+}
+
+.about .container p {
+  font-size: 18px;
+  line-height: 25px;
+  color: var(--main-light-black);
+}
+
+.about .container .status {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.about .container .status .card {
+  text-align: center;
+  padding: 20px;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.28) 0px 0px 20px 1px;
+}
+
+.about .container .status .card img {
+  height: 70px;
+}
+
+.about .container .status .card span {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.about .container .status .card h3 {
+  margin-top: 10px;
+  color: var(--main-blue);
+}
+
+.about .container .status ~ p:not(:last-of-type) {
+  margin-bottom: 30px;
+}
+/* End About */
