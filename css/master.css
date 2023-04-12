@@ -561,6 +561,7 @@ header .container .langs i {
   height: 300px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.28) 0px 0px 20px 1px;
 }
